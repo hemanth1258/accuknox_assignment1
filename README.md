@@ -1,5 +1,5 @@
 
-# Project Name
+# Deployment of Go-App on Amazon Elastic Kubernetes Service (EKS)
 
 ## Prerequisites
 
