@@ -102,3 +102,62 @@ eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
 
 
 
+
+# Configuring Load Balancer
+
+
+Create IAM Policy
+
+```
+aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+```
+
+Create IAM Role
+
+```
+eksctl create iamserviceaccount \
+  --cluster=<your-cluster-name> \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --role-name AmazonEKSLoadBalancerControllerRole \
+  --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --approve
+```
+
+## Deploying ALB controller
+
+Add and update helm repo
+
+```
+helm repo add eks https://aws.github.io/eks-charts
+```
+```
+helm repo update eks
+```
+
+Install
+
+```
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
+  -n kube-system \
+  --set clusterName=<your-cluster-name> \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller \
+  --set region=<region> \
+  --set vpcId=<your-vpc-id>
+```
+
+Verify that the deployments are running.
+
+```
+kubectl get deployment -n kube-system aws-load-balancer-controller
+```
+
+Access the url in browser or use curl  to verify app is running sucessfully .
+
+
+
+
+
