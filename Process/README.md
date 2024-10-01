@@ -88,9 +88,17 @@ For detailed steps, refer to the AWS CLI User Guide:
 
 AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers.
 ```
-eksctl create cluster --name demo-cluster --region us-east-1 --fargate
+eksctl create cluster --name $cluster_name --region us-east-1 --fargate
 ```
 
+##  IAM OIDC provider configuration
+
+IAM OIDC identity providers are entities in IAM that describe an external identity provider (IdP) service that supports the OpenID Connect (OIDC) standard, such as Google or Salesforce. 
+
+
+```
+eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
+```
 
 
 
