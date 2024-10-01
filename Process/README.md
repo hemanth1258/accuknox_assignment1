@@ -86,14 +86,11 @@ For detailed steps, refer to the AWS CLI User Guide:
 
 ## Install using Fargate
 
+AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers.
 ```
 eksctl create cluster --name demo-cluster --region us-east-1 --fargate
 ```
 
-## Delete the cluster
 
-```
-eksctl delete cluster --name demo-cluster --region us-east-1
-```
 
 
