@@ -12,7 +12,7 @@ Scanning all resources in your local Kubernetes cluster using Kubescape.
 
 ### Step 1: Install Minikube
 
-```bash
+```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-arm64
 sudo install minikube-darwin-arm64 /usr/local/bin/minikube
 ```
