@@ -1,7 +1,7 @@
 
 # Deployment of Go-App on Amazon Elastic Kubernetes Service (EKS)
 
-## Prerequisites
+## Step 1 : Prerequisites
 
 Before setting up and running this project, ensure you have the following tools installed:
 
@@ -80,9 +80,9 @@ For detailed steps, refer to the AWS CLI User Guide:
 [Installing, updating, and uninstalling the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html).
 
 
-# Install EKS
+#Step 2: Install EKS
 
-Please follow the prerequisites doc before this.
+
 
 ## Install using Fargate
 
