@@ -19,7 +19,7 @@ sudo install minikube-darwin-arm64 /usr/local/bin/minikube
 
 ### Step 2: Install Kubescape
 
-```bash
+```
 curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
 ```
 
@@ -29,7 +29,7 @@ curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh 
 
 Ensure your Minikube cluster is up and running:
 
-```bash
+```
 minikube start
 ```
 
@@ -37,7 +37,7 @@ minikube start
 
 Use the following command to scan all resources in your Kubernetes cluster:
 
-```bash
+```
 kubescape scan all --kubeconfig ~/.kube/config --format json --output findings.json
 ```
 
@@ -45,7 +45,7 @@ kubescape scan all --kubeconfig ~/.kube/config --format json --output findings.j
 
 Once the scan is complete, open the `findings.json` file to review a detailed list of the security issues found in your cluster.
 
-```bash
+```
 cat findings.json
 ```
 
